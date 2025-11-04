@@ -1,0 +1,34 @@
+name: .NET Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1 — Checkout your repository code
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Step 2 — Set up .NET (use the version your project targets)
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 9.0.x
+
+      # Step 3 — Restore dependencies
+      - name: Restore dependencies
+        run: dotnet restore Backend.Tests
+
+      # Step 4 — Build the solution
+      - name: Build
+        run: dotnet build Backend.Tests --no-restore
+
+      # Step 5 — Run all xUnit tests
+      - name: Run tests
+        run: dotnet test Backend.Tests --no-build --verbosity normal
