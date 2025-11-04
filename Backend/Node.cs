@@ -1,14 +1,12 @@
-namespace Backend
+namespace Backend;
+public class Node
 {
-    public class Node
-    {
-        public char Value;
-        public Node? Left, Right;
+    public char Value;
+    public Node? Left, Right;
 
-        public Node(char value)
-        {
-            Value = value;
-            Left = Right = null;
-        }
+    public Node(char value)
+    {
+        Value = value;
+        Left = Right = null;
     }
 }
