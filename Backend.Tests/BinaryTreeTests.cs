@@ -108,7 +108,9 @@ public class BinaryTreeTests
         Assert.NotNull(tree.Root.Left.Left.Left.Left);
         Assert.NotNull(tree.Root.Left.Left.Left.Right);
         Assert.NotNull(tree.Root.Left.Left.Right.Left);
+        Assert.NotNull(tree.Root.Left.Left.Right.Right);
         Assert.NotNull(tree.Root.Left.Right.Left.Left);
+        Assert.NotNull(tree.Root.Left.Right.Left.Right);
         Assert.NotNull(tree.Root.Left.Right.Right.Left);
         Assert.NotNull(tree.Root.Left.Right.Right.Right);
         Assert.NotNull(tree.Root.Right.Left.Left.Left);
@@ -117,6 +119,8 @@ public class BinaryTreeTests
         Assert.NotNull(tree.Root.Right.Left.Right.Right);
         Assert.NotNull(tree.Root.Right.Right.Left.Left);
         Assert.NotNull(tree.Root.Right.Right.Left.Right);
+        Assert.NotNull(tree.Root.Right.Right.Right.Left);
+        Assert.NotNull(tree.Root.Right.Right.Right.Right);
 
         // Assert Level 4 values
         Assert.Equal('H', tree.Root.Left.Left.Left.Left.Value);
@@ -132,7 +136,7 @@ public class BinaryTreeTests
         Assert.Equal('Z', tree.Root.Right.Right.Left.Left.Value);
         Assert.Equal('Q', tree.Root.Right.Right.Left.Right.Value);
     }
-    
+
     [Fact]
     public void InitTree_ShouldCreateCorrectStructureforLevel5()
     {
@@ -146,10 +150,20 @@ public class BinaryTreeTests
         Assert.NotNull(tree.Root.Left.Left.Left.Left.Left);
         Assert.NotNull(tree.Root.Left.Left.Left.Left.Right);
         Assert.NotNull(tree.Root.Left.Left.Left.Right.Right);
+        Assert.NotNull(tree.Root.Left.Left.Right.Right.Left);
         Assert.NotNull(tree.Root.Left.Left.Right.Right.Right);
+        Assert.NotNull(tree.Root.Left.Right.Left.Left.Left);
+        Assert.NotNull(tree.Root.Left.Right.Left.Left.Right);
+        Assert.NotNull(tree.Root.Left.Right.Left.Right.Left);
+        Assert.NotNull(tree.Root.Left.Right.Right.Left.Right);
         Assert.NotNull(tree.Root.Left.Right.Right.Right.Right);
         Assert.NotNull(tree.Root.Right.Left.Left.Left.Left);
+        Assert.NotNull(tree.Root.Right.Left.Left.Left.Right);
+        Assert.NotNull(tree.Root.Right.Left.Left.Right.Left);
+        Assert.NotNull(tree.Root.Right.Left.Right.Left.Right);
+        Assert.NotNull(tree.Root.Right.Left.Right.Right.Left);
         Assert.NotNull(tree.Root.Right.Right.Left.Left.Left);
+        Assert.NotNull(tree.Root.Right.Right.Left.Left.Right);
         Assert.NotNull(tree.Root.Right.Right.Right.Left.Left);
         Assert.NotNull(tree.Root.Right.Right.Right.Right.Left);
         Assert.NotNull(tree.Root.Right.Right.Right.Right.Right);
@@ -159,11 +173,54 @@ public class BinaryTreeTests
         Assert.Equal('4', tree.Root.Left.Left.Left.Left.Right.Value);
         Assert.Equal('3', tree.Root.Left.Left.Left.Right.Right.Value);
         Assert.Equal('2', tree.Root.Left.Left.Right.Right.Right.Value);
+        Assert.Equal('&', tree.Root.Left.Right.Left.Left.Left.Value);
+        Assert.Equal('+', tree.Root.Left.Right.Left.Right.Left.Value);
         Assert.Equal('1', tree.Root.Left.Right.Right.Right.Right.Value);
         Assert.Equal('6', tree.Root.Right.Left.Left.Left.Left.Value);
+        Assert.Equal('=', tree.Root.Right.Left.Left.Left.Right.Value);
+        Assert.Equal('/', tree.Root.Right.Left.Left.Right.Left.Value);
+        Assert.Equal('(', tree.Root.Right.Left.Right.Right.Left.Value);
         Assert.Equal('7', tree.Root.Right.Right.Left.Left.Left.Value);
         Assert.Equal('8', tree.Root.Right.Right.Right.Left.Left.Value);
         Assert.Equal('9', tree.Root.Right.Right.Right.Right.Left.Value);
         Assert.Equal('0', tree.Root.Right.Right.Right.Right.Right.Value);
+    }
+    
+    [Fact]
+    public void InitTree_ShouldCreateCorrectStructureforLevel6()
+    {
+        // Arrange
+        var tree = new BinaryTree();
+
+        // Act
+        tree.InitTree();
+
+        // Assert Level 6 as not null
+        Assert.NotNull(tree.Root.Left.Left.Right.Right.Left.Left);
+        Assert.NotNull(tree.Root.Left.Left.Right.Right.Left.Right);
+        Assert.NotNull(tree.Root.Left.Right.Left.Left.Right.Left);
+        Assert.NotNull(tree.Root.Left.Right.Left.Right.Left.Right);
+        Assert.NotNull(tree.Root.Left.Right.Right.Left.Right.Left);
+        Assert.NotNull(tree.Root.Left.Right.Right.Right.Right.Left);
+        Assert.NotNull(tree.Root.Right.Left.Left.Left.Left.Right);
+        Assert.NotNull(tree.Root.Right.Left.Right.Left.Right.Left);
+        Assert.NotNull(tree.Root.Right.Left.Right.Left.Right.Right);
+        Assert.NotNull(tree.Root.Right.Left.Right.Right.Left.Right);
+        Assert.NotNull(tree.Root.Right.Right.Left.Left.Right.Right);
+        Assert.NotNull(tree.Root.Right.Right.Right.Left.Left.Left);
+
+        // Assert Level 6 values
+        Assert.Equal('?', tree.Root.Left.Left.Right.Right.Left.Left.Value);
+        Assert.Equal('_', tree.Root.Left.Left.Right.Right.Left.Right.Value);
+        Assert.Equal('"', tree.Root.Left.Right.Left.Left.Right.Left.Value);
+        Assert.Equal('.', tree.Root.Left.Right.Left.Right.Left.Right.Value);
+        Assert.Equal('@', tree.Root.Left.Right.Right.Left.Right.Left.Value);
+        Assert.Equal('\'', tree.Root.Left.Right.Right.Right.Right.Left.Value);
+        Assert.Equal('-', tree.Root.Right.Left.Left.Left.Left.Right.Value);
+        Assert.Equal(';', tree.Root.Right.Left.Right.Left.Right.Left.Value);
+        Assert.Equal('!', tree.Root.Right.Left.Right.Left.Right.Right.Value);
+        Assert.Equal(')', tree.Root.Right.Left.Right.Right.Left.Right.Value);
+        Assert.Equal(',', tree.Root.Right.Right.Left.Left.Right.Right.Value);
+        Assert.Equal(':', tree.Root.Right.Right.Right.Left.Left.Left.Value);
     }
 }
