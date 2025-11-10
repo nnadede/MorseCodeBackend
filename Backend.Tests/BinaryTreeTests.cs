@@ -185,7 +185,7 @@ public class BinaryTreeTests
         Assert.Equal('9', tree.Root.Right.Right.Right.Right.Left.Value);
         Assert.Equal('0', tree.Root.Right.Right.Right.Right.Right.Value);
     }
-    
+
     [Fact]
     public void InitTree_ShouldCreateCorrectStructureforLevel6()
     {
@@ -222,5 +222,24 @@ public class BinaryTreeTests
         Assert.Equal(')', tree.Root.Right.Left.Right.Right.Left.Right.Value);
         Assert.Equal(',', tree.Root.Right.Right.Left.Left.Right.Right.Value);
         Assert.Equal(':', tree.Root.Right.Right.Right.Left.Left.Left.Value);
+    }
+    
+    [Fact]
+    public void Decode_ShouldReturnCorrectCharacter_ForGivenMorseCode()
+    {
+        // Arrange
+        var tree = new BinaryTree();
+        tree.InitTree();
+
+        // Act & Assert
+        Assert.Equal('S', tree.Decode("..."));
+        Assert.Equal('O', tree.Decode("---"));
+        Assert.Equal('5', tree.Decode("....."));
+        Assert.Equal('&', tree.Decode(".-..."));
+        Assert.Equal('?', tree.Decode("..--.."));
+        Assert.Equal('1', tree.Decode(".----"));
+        Assert.Equal('0', tree.Decode("-----"));
+
+        // More to be added as needed
     }
 }
