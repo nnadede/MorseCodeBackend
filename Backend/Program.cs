@@ -25,6 +25,21 @@ while (isRunning)
             Console.WriteLine("Enter the message to encode:");
             string? message = Console.ReadLine();
             // Call the encoding function here
+            if (message != null)
+            {
+                foreach (char c in message.ToUpper())
+                {
+                    if (MorseDict.CharToMorse.TryGetValue(c, out string? value))
+                    {
+                        Console.Write(value + " ");
+                    }
+                    else if (c == ' ')
+                    {
+                        Console.Write("  "); // Extra space for word separation
+                    }
+                }
+                Console.ReadLine();
+            }
             break;
         case '2':
             Console.WriteLine("Enter the Morse code to decode:");
