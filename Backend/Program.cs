@@ -1,18 +1,53 @@
 ﻿
 using Backend;
 
-BinaryTree tree = new BinaryTree();
-//tree.InitTree();
 
-if (tree.Root == null)
+Console.WriteLine("Welcome to Morse Code Translator!");
+
+bool isRunning = true;
+
+while (isRunning)
 {
-    Console.WriteLine("Tree is not initialized.");
-}else
-{
-    Console.WriteLine("Tree is initialized.");
+    Console.Clear();
+    Console.WriteLine("Choose from the following options:");
+    Console.WriteLine("1. Encode a message to Morse code");
+    Console.WriteLine("2. Decode a Morse code message");
+    Console.WriteLine("Q to quit");
+
+    Console.Write("Enter your choice: ");
+    char option = Console.ReadKey().KeyChar;
+
+    Console.WriteLine(); // For better formatting
+
+    switch (option)
+    {
+        case '1':
+            Console.WriteLine("Enter the message to encode:");
+            string? message = Console.ReadLine();
+            // Call the encoding function here
+            break;
+        case '2':
+            Console.WriteLine("Enter the Morse code to decode:");
+            string? morseCode = Console.ReadLine();
+            // Initialize the binary tree for decoding
+            BinaryTree tree = new BinaryTree();
+            tree.InitTree();
+            // Call the decoding function here
+            string[] codes = morseCode?.Split(' ') ?? Array.Empty<string>();
+            foreach (var code in codes)
+            {
+                char decodedChar = (code == "") ? ' ' : tree.Decode(code);
+                Console.Write(decodedChar);
+            }
+            Console.ReadLine();
+            break;
+        case 'Q':
+        case 'q':
+            Console.WriteLine("Exiting...");
+            isRunning = false;
+            break;
+        default:
+            Console.WriteLine("Invalid option.");
+            break;
+    }
 }
-
-Console.WriteLine("Hello, World!");
-// Console.WriteLine($"Root Node Value: {tree.Root?.Left?.Value}"); // Example to show usage
-
-
