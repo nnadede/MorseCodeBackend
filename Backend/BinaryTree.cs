@@ -84,4 +84,28 @@ public class BinaryTree
         Root.Right!.Right!.Left!.Left!.Right!.Right = new Node(',');
         Root.Right!.Right!.Right!.Left!.Left!.Left = new Node(':');
     }
+
+    public char Decode(string morseCode)
+    {
+        // Implementation for decoding a Morse code string to a character
+        var currentNode = Root;
+        foreach (char symbol in morseCode)
+        {
+            if (currentNode == null) break;
+
+            if (symbol == '.')
+            {
+                currentNode = currentNode.Left;
+            }
+            else if (symbol == '-')
+            {
+                currentNode = currentNode.Right;
+            }
+            else
+            {
+                throw new ArgumentException("Invalid Morse code symbol.");
+            }
+        }
+        return currentNode?.Value ?? throw new ArgumentException("Invalid Morse code.");
+    }
 }
