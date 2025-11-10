@@ -36,6 +36,7 @@ public class BinaryTree
         Root.Left.Left.Right.Left = new Node('F');
         Root.Left.Left.Right.Right = new Node('#');
         Root.Left.Right.Left.Left = new Node('L');
+        Root.Left.Right.Left.Right = new Node('#');
         Root.Left.Right.Right.Left = new Node('P');
         Root.Left.Right.Right.Right = new Node('J');
         Root.Right.Left.Left.Left = new Node('B');
@@ -47,15 +48,40 @@ public class BinaryTree
         Root.Right.Right.Right.Left = new Node('#');
         Root.Right.Right.Right.Right = new Node('#');
         // Level 5
+        // Numbers and arithmetic symbols
         Root.Left!.Left!.Left!.Left!.Left = new Node('5');
         Root.Left!.Left!.Left!.Left!.Right = new Node('4');
         Root.Left!.Left!.Left!.Right!.Right = new Node('3');
+        Root.Left!.Left!.Right!.Right!.Left = new Node('#');
         Root.Left!.Left!.Right!.Right!.Right = new Node('2');
+        Root.Left!.Right!.Left!.Left!.Left = new Node('&');
+        Root.Left!.Right!.Left!.Left!.Right = new Node('#');
+        Root.Left!.Right!.Left!.Right!.Left = new Node('+');
+        Root.Left!.Right!.Right!.Left!.Right = new Node('#');
         Root.Left!.Right!.Right!.Right!.Right = new Node('1');
         Root.Right!.Left!.Left!.Left!.Left = new Node('6');
+        Root.Right!.Left!.Left!.Left!.Right = new Node('=');
+        Root.Right!.Left!.Left!.Right!.Left = new Node('/');
+        Root.Right!.Left!.Right!.Left!.Right = new Node('#');
+        Root.Right!.Left!.Right!.Right!.Left = new Node('(');
         Root.Right!.Right!.Left!.Left!.Left = new Node('7');
+        Root.Right!.Right!.Left!.Left!.Right = new Node('#');
         Root.Right!.Right!.Right!.Left!.Left = new Node('8');
         Root.Right!.Right!.Right!.Right!.Left = new Node('9');
         Root.Right!.Right!.Right!.Right!.Right = new Node('0');
+        // Level 6
+        // Punctuation and Special Characters
+        Root.Left!.Left!.Right!.Right!.Left!.Left = new Node('?');
+        Root.Left!.Left!.Right!.Right!.Left!.Right = new Node('_');
+        Root.Left!.Right!.Left!.Left!.Right!.Left = new Node('"');
+        Root.Left!.Right!.Left!.Right!.Left!.Right = new Node('.');
+        Root.Left!.Right!.Right!.Left!.Right!.Left = new Node('@');
+        Root.Left!.Right!.Right!.Right!.Right!.Left = new Node('\'');
+        Root.Right!.Left!.Left!.Left!.Left!.Right = new Node('-');
+        Root.Right!.Left!.Right!.Left!.Right!.Left = new Node(';');
+        Root.Right!.Left!.Right!.Left!.Right!.Right = new Node('!');
+        Root.Right!.Left!.Right!.Right!.Left!.Right = new Node(')');
+        Root.Right!.Right!.Left!.Left!.Right!.Right = new Node(',');
+        Root.Right!.Right!.Right!.Left!.Left!.Left = new Node(':');
     }
 }
