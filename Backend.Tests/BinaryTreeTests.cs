@@ -223,23 +223,123 @@ public class BinaryTreeTests
         Assert.Equal(',', tree.Root.Right.Right.Left.Left.Right.Right.Value);
         Assert.Equal(':', tree.Root.Right.Right.Right.Left.Left.Left.Value);
     }
-    
+
     [Fact]
-    public void Decode_ShouldReturnCorrectCharacter_ForGivenMorseCode()
+    public void Decode_ShouldReturnCorrectCharacter_MorseCodeLevel1()
     {
         // Arrange
         var tree = new BinaryTree();
         tree.InitTree();
 
         // Act & Assert
-        Assert.Equal('S', tree.Decode("..."));
-        Assert.Equal('O', tree.Decode("---"));
-        Assert.Equal('5', tree.Decode("....."));
-        Assert.Equal('&', tree.Decode(".-..."));
-        Assert.Equal('?', tree.Decode("..--.."));
-        Assert.Equal('1', tree.Decode(".----"));
-        Assert.Equal('0', tree.Decode("-----"));
+        // Level 1
+        Assert.Equal('E', tree.Decode("."));
+        Assert.Equal('T', tree.Decode("-"));
+    }
 
-        // More to be added as needed
+    [Fact]
+    public void Decode_ShouldReturnCorrectCharacter_MorseCodeLevel2()
+    {
+        // Arrange
+        var tree = new BinaryTree();
+        tree.InitTree();
+
+        // Act & Assert
+        // Level 2
+        Assert.Equal('I', tree.Decode(".."));
+        Assert.Equal('A', tree.Decode(".-"));
+        Assert.Equal('N', tree.Decode("-."));
+        Assert.Equal('M', tree.Decode("--"));
+    }
+
+    [Fact]
+    public void Decode_ShouldReturnCorrectCharacter_MorseCodeLevel3()
+    {
+        // Arrange
+        var tree = new BinaryTree();
+        tree.InitTree();
+
+        // Act & Assert
+        // Level 3
+        Assert.Equal('S', tree.Decode("..."));
+        Assert.Equal('U', tree.Decode("..-"));
+        Assert.Equal('R', tree.Decode(".-."));
+        Assert.Equal('W', tree.Decode(".--"));
+        Assert.Equal('D', tree.Decode("-.."));
+        Assert.Equal('K', tree.Decode("-.-"));
+        Assert.Equal('G', tree.Decode("--."));
+        Assert.Equal('O', tree.Decode("---"));
+    }
+
+    [Fact]
+    public void Decode_ShouldReturnCorrectCharacter_MorseCodeLevel4()
+    {
+        // Arrange
+        var tree = new BinaryTree();
+        tree.InitTree();
+
+        // Act & Assert
+        // Level 4
+        Assert.Equal('H', tree.Decode("...."));
+        Assert.Equal('V', tree.Decode("...-"));
+        Assert.Equal('F', tree.Decode("..-."));
+        Assert.Equal('L', tree.Decode(".-.."));
+        Assert.Equal('P', tree.Decode(".--."));
+        Assert.Equal('J', tree.Decode(".---"));
+        Assert.Equal('B', tree.Decode("-..."));
+        Assert.Equal('X', tree.Decode("-..-"));
+        Assert.Equal('C', tree.Decode("-.-."));
+        Assert.Equal('Y', tree.Decode("-.--"));
+        Assert.Equal('Z', tree.Decode("--.."));
+        Assert.Equal('Q', tree.Decode("--.-"));
+    }
+
+    [Fact]
+    public void Decode_ShouldReturnCorrectCharacter_MorseCodeLevel5()
+    {
+        // Arrange
+        var tree = new BinaryTree();
+        tree.InitTree();
+
+        // Act & Assert
+        // Level 5
+        Assert.Equal('5', tree.Decode("....."));
+        Assert.Equal('4', tree.Decode("....-"));
+        Assert.Equal('3', tree.Decode("...--"));
+        Assert.Equal('2', tree.Decode("..---"));
+        Assert.Equal('&', tree.Decode(".-..."));
+        Assert.Equal('+', tree.Decode(".-.-."));
+        Assert.Equal('1', tree.Decode(".----"));
+        Assert.Equal('6', tree.Decode("-...."));
+        Assert.Equal('=', tree.Decode("-...-"));
+        Assert.Equal('/', tree.Decode("-..-."));
+        Assert.Equal('(', tree.Decode("-.--."));
+        Assert.Equal('7', tree.Decode("--..."));
+        Assert.Equal('8', tree.Decode("---.."));
+        Assert.Equal('9', tree.Decode("----."));
+        Assert.Equal('0', tree.Decode("-----"));
+    }
+
+    [Fact]
+    public void Decode_ShouldReturnCorrectCharacter_MorseCodeLevel6()
+    {
+        // Arrange
+        var tree = new BinaryTree();
+        tree.InitTree();
+
+        // Act & Assert
+        // Level 6
+        Assert.Equal('?', tree.Decode("..--.."));
+        Assert.Equal('_', tree.Decode("..--.-"));
+        Assert.Equal('"', tree.Decode(".-..-."));
+        Assert.Equal('.', tree.Decode(".-.-.-"));
+        Assert.Equal('@', tree.Decode(".--.-."));
+        Assert.Equal('\'', tree.Decode(".----."));
+        Assert.Equal('-', tree.Decode("-....-"));
+        Assert.Equal(';', tree.Decode("-.-.-."));
+        Assert.Equal('!', tree.Decode("-.-.--"));
+        Assert.Equal(')', tree.Decode("-.--.-"));
+        Assert.Equal(',', tree.Decode("--..--"));
+        Assert.Equal(':', tree.Decode("---..."));
     }
 }
